@@ -14,7 +14,7 @@ function Card1({ props, handleclick }) {
               onClick={() => handleclick(id)}
               className="px-5 py-1 bg-blue-300 rounded-2xl"
             >
-              {}
+              {friends == false ? "Add Friends" : "Remove Friends"}
             </button>
           </div>
         </div>
