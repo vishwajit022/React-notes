@@ -27,12 +27,14 @@ function App1() {
   ];
   const [data, setData] = useState(raw);
   function changeFriend(updatevalue) {
-    return data.map((item, i) => {
-      console.log(item);
-      if (i == updatevalue) return setData(!item.friends);
-      else return item;
-    });
+    setData(
+      data.map((item) => {
+        if (item.id === updatevalue) return { ...item, friends: !item.friends };
+        return item;
+      })
+    );
   }
+
   return (
     <div>
       <div className="flex items-center justify-center w-full h-screen gap-10 bg-slate-300 ">

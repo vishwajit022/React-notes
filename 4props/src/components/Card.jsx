@@ -1,28 +1,26 @@
-function Card({ values }) {
-  const { img, name, desc, changeFriend, friends } = values;
+function Card1({ props, handleclick }) {
+  const { img, name, id, desc, friends } = props;
   return (
     <div>
-      <div className="flex flex-col items-center justify-center overflow-hidden bg-red-100 rounded-md h-30 w-60">
-        <div className="h-auto w-60">
-          <img className="w-full " src={img} alt="" />
+      <div className="bg-red-50 h-[70vh] w-[25vw] overflow-hidden  rounded-3xl">
+        <div className=" w-full h-[45vh] bg-slate-600 ">
+          <img className="object-cover w-full h-full" src={img} alt="" />
         </div>
-
-        <h3 className="text-2xl font-semibold">{name}</h3>
-
-        <h5 className="text-sm">{desc}</h5>
-        <button
-          onClick={changeFriend}
-          className="px-3 py-1 mt-2 bg-blue-400 rounded-md"
-        >
-          {friends == true ? (
-            <div className>Remove Friend</div>
-          ) : (
-            <div>Add friend</div>
-          )}
-        </button>
+        <div className="flex flex-col gap-3 mt-2 text-center wrap-text">
+          <div className="font-bold title text-[25px]">{name}</div>
+          <div className="desc">{desc}</div>
+          <div className=" btn">
+            <button
+              onClick={() => handleclick(id)}
+              className="px-5 py-1 bg-blue-300 rounded-2xl"
+            >
+              {friends == false ? "Add Friends" : "Remove Friends"}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Card;
+export default Card1;
