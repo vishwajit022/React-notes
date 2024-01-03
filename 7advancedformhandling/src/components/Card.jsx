@@ -1,21 +1,28 @@
 import React from "react";
 
-function Card() {
+function Card({ props }) {
+  const {} = props;
   return (
     <div>
-      <div className="w-[10vw] absolute h-3/4 bg-sky-500 rounded-lg flex overflow-hidden flex-col items-center">
-        <div className="image w-[3vw] h-[3vw] rounded-full bg-blue-800 overflow-hidden ">
+      <div className="w-[10vw] absolute h-[35vh] bg-sky-500 rounded-lg overflow-hidden py-6 text-center">
+        <div className="image image-center mx-auto flex items-center justify-center w-[5vw] h-[5vw] rounded-full bg-blue-800 overflow-hidden">
           <img
-            className="w-full h-full object-cover "
-            src="https://media.licdn.com/dms/image/D4D03AQEjaOEY1mh4bA/profile-displayphoto-shrink_800_800/0/1697409185669?e=1709769600&v=beta&t=eziDMJRjq69yA1OoKFs3e1zO0yT2uYuC0FVNijfrf2A"
+            className="w-full h-full object-cover"
+            src={props.image}
             alt=""
           />
         </div>
-        <h1 className="text-xl font-semibold">Vishwajit</h1>
-        <p className="text-center text-xs font-semibold leading-none -tracking-tighter ">
+        <h1 className="text-xl font-semibold">{props.name}</h1>
+        <h4 className="opacity-50 text-gray-800 font-semibold text-xs">
+          {props.email}
+        </h4>
+        <p className="text-center text-xs mt-4 font-semibold leading-none -tracking-tighter">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Exercitationem cupiditate fugiat sit!
         </p>
+        <button className="px-2 py-1 mt-4 bg-red-600 text-xs rounded-lg font-semibold text-white">
+          Remove It
+        </button>
       </div>
     </div>
   );
